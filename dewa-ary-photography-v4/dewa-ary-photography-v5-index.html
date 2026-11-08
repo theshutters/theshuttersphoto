@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DEWA ARY — Sports Photography</title>
+  <meta name="description" content="DEWA ARY — Sports photography in Bali. Padel, Tennis, Mini Soccer, HYROX and Community.">
+
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: #0a0a0a;
+      color: #f5f5f5;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 5vw;
+      background: linear-gradient(#080808ee, transparent);
+      backdrop-filter: blur(10px);
+    }
+
+    .logo {
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: .2em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+    }
+
+    .hero {
+      min-height: 100vh;
+      padding: 150px 5vw 80px;
+      display: flex;
+      align-items: flex-end;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 75% 25%, #343434 0, #171717 30%, #080808 72%);
+    }
+
+    .hero::after {
+      content: "SPORTS / MOTION / COMMUNITY";
+      position: absolute;
+      right: -100px;
+      top: 35%;
+      color: rgba(255,255,255,.035);
+      font-size: clamp(50px, 9vw, 130px);
+      font-weight: 900;
+      letter-spacing: -.07em;
+      transform: rotate(-90deg);
+      white-space: nowrap;
+    }
+
+    .eyebrow {
+      color: #777;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      margin: 0 0 30px;
+      font-size: clamp(70px, 14vw, 180px);
+      line-height: .78;
+      letter-spacing: -.08em;
+    }
+
+    .hero p {
+      max-width: 570px;
+      color: #aaa;
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 14px 21px;
+      border: 1px solid #444;
+      border-radius: 999px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .15em;
+    }
+
+    .section {
+      padding: 110px 5vw;
+    }
+
+    .section-title {
+      margin: 0 0 55px;
+      font-size: clamp(45px, 7vw, 90px);
+      line-height: .9;
+      letter-spacing: -.06em;
+    }
+
+    .sports-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+      background: #262626;
+    }
+
+    .sport-card {
+      min-height: 430px;
+      padding: 30px;
+      display: flex;
+      align-items: flex-end;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(145deg, #252525, #0e0e0e);
+      transition: transform .25s ease, background .25s ease;
+    }
+
+    .sport-card:hover {
+      transform: scale(.99);
+      background: linear-gradient(145deg, #303030, #101010);
+    }
+
+    .sport-card:nth-child(3),
+    .sport-card:nth-child(4) {
+      min-height: 500px;
+    }
+
+    .sport-card:nth-child(5) {
+      grid-column: 1 / -1;
+      min-height: 360px;
+    }
+
+    .sport-number {
+      position: absolute;
+      top: 25px;
+      right: 25px;
+      color: rgba(255,255,255,.08);
+      font-size: 80px;
+      font-weight: 900;
+    }
+
+    .sport-card h3 {
+      margin: 0;
+      font-size: clamp(35px, 5vw, 65px);
+      letter-spacing: -.06em;
+    }
+
+    .sport-card span {
+      display: block;
+      margin-top: 9px;
+      color: #999;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+    }
+
+    .intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: end;
+    }
+
+    .intro p {
+      margin: 0;
+      color: #aaa;
+      font-size: 16px;
+      line-height: 1.8;
+      max-width: 600px;
+    }
+
+    .category-section {
+      border-top: 1px solid #222;
+    }
+
+    .category-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 45px;
+    }
+
+    .category-header h2 {
+      margin: 0;
+      font-size: clamp(50px, 8vw, 105px);
+      letter-spacing: -.07em;
+      line-height: .82;
+    }
+
+    .category-header p {
+      max-width: 430px;
+      color: #888;
+      line-height: 1.7;
+    }
+
+    .photo-placeholder {
+      min-height: 430px;
+      display: grid;
+      place-items: center;
+      border: 1px solid #222;
+      background: linear-gradient(135deg, #151515, #0c0c0c);
+      color: #555;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-size: 11px;
+    }
+
+    .photo-placeholder strong {
+      display: block;
+      color: #777;
+      font-size: 22px;
+      letter-spacing: .05em;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .contact {
+      border-top: 1px solid #222;
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+    }
+
+    .contact h2 {
+      margin: 0;
+      font-size: clamp(50px, 8vw, 100px);
+      line-height: .82;
+      letter-spacing: -.07em;
+    }
+
+    footer {
+      padding: 35px 5vw;
+      border-top: 1px solid #222;
+      display: flex;
+      justify-content: space-between;
+      color: #666;
+      font-size: 10px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 700px) {
+      .nav-links { display: none; }
+      .hero { min-height: 88vh; }
+      .sports-grid { grid-template-columns: 1fr; }
+      .sport-card,
+      .sport-card:nth-child(3),
+      .sport-card:nth-child(4),
+      .sport-card:nth-child(5) {
+        min-height: 320px;
+        grid-column: auto;
+      }
+      .intro,
+      .contact {
+        grid-template-columns: 1fr;
+        display: grid;
+        gap: 25px;
+      }
+      .category-header { display: block; }
+      .category-header p { margin-top: 25px; }
+      .section { padding: 80px 5vw; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="nav">
+    <a href="#top" class="logo">DEWA ARY</a>
+    <div class="nav-links">
+      <a href="#sports">Olahraga</a>
+      <a href="#padel">Padel</a>
+      <a href="#tennis">Tenis</a>
+      <a href="#soccer">Mini Soccer</a>
+      <a href="#hyrox">HYROX</a>
+      <a href="#community">Community</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div>
+      <div class="eyebrow">Sports Photographer / Bali</div>
+      <h1>IN<br>MOTION.</h1>
+      <p>
+        Capturing intensity, emotion and the moments between the action.
+        Sports photography for athletes, events and communities.
+      </p>
+      <a class="button" href="#sports">Explore Sports ↓</a>
+    </div>
+  </header>
+
+  <section class="section" id="sports">
+    <div class="eyebrow">01 — Olahraga</div>
+    <h2 class="section-title">THE GAME.<br>THE PEOPLE.</h2>
+
+    <div class="sports-grid">
+      <a class="sport-card" href="#padel">
+        <div class="sport-number">01</div>
+        <div>
+          <h3>Padel</h3>
+          <span>Match / Tournament / Lifestyle</span>
+        </div>
+      </a>
+
+      <a class="sport-card" href="#tennis">
+        <div class="sport-number">02</div>
+        <div>
+          <h3>Tenis</h3>
+          <span>Competition / Portrait / Motion</span>
+        </div>
+      </a>
+
+      <a class="sport-card" href="#soccer">
+        <div class="sport-number">03</div>
+        <div>
+          <h3>Mini Soccer</h3>
+          <span>Action / Team / Matchday</span>
+        </div>
+      </a>
+
+      <a class="sport-card" href="#hyrox">
+        <div class="sport-number">04</div>
+        <div>
+          <h3>HYROX</h3>
+          <span>Endurance / Strength / Grit</span>
+        </div>
+      </a>
+
+      <a class="sport-card" href="#community">
+        <div class="sport-number">05</div>
+        <div>
+          <h3>Community</h3>
+          <span>People / Events / Culture</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="section category-section" id="padel">
+    <div class="category-header">
+      <div>
+        <div class="eyebrow">02 — Padel</div>
+        <h2>PADEL.</h2>
+      </div>
+      <p>Match moments, tournaments, portraits and the energy around the court.</p>
+    </div>
+    <div class="photo-placeholder">
+      <div>
+        <strong>PADEL PHOTOS</strong>
+        Photos will be added here
+      </div>
+    </div>
+  </section>
+
+  <section class="section category-section" id="tennis">
+    <div class="category-header">
+      <div>
+        <div class="eyebrow">03 — Tenis</div>
+        <h2>TENIS.</h2>
+      </div>
+      <p>Competition, movement, focus and the details that define the match.</p>
+    </div>
+    <div class="photo-placeholder">
+      <div>
+        <strong>TENIS PHOTOS</strong>
+        Photos will be added here
+      </div>
+    </div>
+  </section>
+
+  <section class="section category-section" id="soccer">
+    <div class="category-header">
+      <div>
+        <div class="eyebrow">04 — Mini Soccer</div>
+        <h2>MINI<br>SOCCER.</h2>
+      </div>
+      <p>Speed, competition, team spirit and the emotion of matchday.</p>
+    </div>
+    <div class="photo-placeholder">
+      <div>
+        <strong>MINI SOCCER PHOTOS</strong>
+        Photos will be added here
+      </div>
+    </div>
+  </section>
+
+  <section class="section category-section" id="hyrox">
+    <div class="category-header">
+      <div>
+        <div class="eyebrow">05 — HYROX</div>
+        <h2>HYROX.</h2>
+      </div>
+      <p>Endurance, strength, pain and the determination to keep moving.</p>
+    </div>
+    <div class="photo-placeholder">
+      <div>
+        <strong>HYROX PHOTOS</strong>
+        Photos will be added here
+      </div>
+    </div>
+  </section>
+
+  <section class="section category-section" id="community">
+    <div class="category-header">
+      <div>
+        <div class="eyebrow">06 — Community</div>
+        <h2>COMMUNITY.</h2>
+      </div>
+      <p>The people, friendships, events and culture behind every sporting community.</p>
+    </div>
+    <div class="photo-placeholder">
+      <div>
+        <strong>COMMUNITY PHOTOS</strong>
+        Photos will be added here
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="intro">
+      <div>
+        <div class="eyebrow">07 — About</div>
+        <h2 class="section-title">FRAME<br>THE<br>ENERGY.</h2>
+      </div>
+      <p>
+        I’m Dewa, a Bali-based sports photographer focused on capturing
+        intensity, emotion, connection and character. From tournaments to
+        community sessions, the goal is simple: create images that make
+        people feel the moment again.
+      </p>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <div>
+      <div class="eyebrow">08 — Contact</div>
+      <h2>LET'S<br>CREATE.</h2>
+    </div>
+    <div>
+      <a class="button" href="https://www.instagram.com/theshutters__/" target="_blank" rel="noopener">@theshutters__ ↗</a>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 DEWA ARY PHOTOGRAPHY</span>
+    <span>BALI, INDONESIA</span>
+  </footer>
+
+</body>
+</html>
