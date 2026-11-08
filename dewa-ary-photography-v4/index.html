@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DEWA ARY — Sports Photography</title>
+<meta name="description" content="Dewa Ary — sports and community photographer in Bali. Tennis, padel, mini soccer, HYROX and community events.">
+<style>
+:root{--bg:#080808;--fg:#f5f5f2;--muted:#999;--line:#222}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:Inter,Arial,sans-serif}a{color:inherit;text-decoration:none}img{display:block;width:100%}
+.nav{position:fixed;inset:0 0 auto;z-index:20;padding:22px 5vw;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(#050505ee,transparent);backdrop-filter:blur(8px)}
+.brand{font-size:13px;font-weight:800;letter-spacing:.2em}.navlinks{display:flex;gap:25px;font-size:10px;text-transform:uppercase;letter-spacing:.14em}.navlinks a{opacity:.85}.navlinks a:hover{opacity:1}
+.hero{min-height:100vh;position:relative;display:flex;align-items:end;padding:0 5vw 8vh;overflow:hidden;background:#111}.hero-media{position:absolute;inset:0}.hero-media img{height:100%;object-fit:cover;object-position:center 42%;filter:saturate(.88) contrast(1.06)}.hero-media:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#000d 0%,#0007 38%,#0001 78%),linear-gradient(0deg,#080808 0%,transparent 48%,#0004 100%)}
+.hero-copy{position:relative;z-index:2;max-width:820px}.eyebrow{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#aaa;margin-bottom:14px}.hero h1{font-size:clamp(68px,13vw,175px);line-height:.78;letter-spacing:-.09em;margin:0 0 28px}.hero p{max-width:560px;color:#d0d0d0;line-height:1.7;font-size:15px;margin:0}.cta{display:inline-block;margin-top:28px;border:1px solid #555;border-radius:999px;padding:13px 19px;font-size:10px;text-transform:uppercase;letter-spacing:.16em}.cta:hover{background:#fff;color:#000}
+.section{padding:115px 5vw}.section h2{font-size:clamp(45px,7vw,95px);line-height:.85;letter-spacing:-.07em;margin:0 0 48px}.categories{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--line)}.category{min-height:360px;display:flex;align-items:end;padding:28px;position:relative;overflow:hidden;background:#111}.category:before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#000d,transparent 70%);z-index:1}.category img{position:absolute;inset:0;height:100%;object-fit:cover;opacity:.58;transition:.7s}.category:hover img{transform:scale(1.04);opacity:.72}.category>div{position:relative;z-index:2}.category:nth-child(3),.category:nth-child(4){min-height:460px}.category:last-child{grid-column:1/-1;min-height:320px}.category h3{font-size:clamp(34px,5vw,68px);letter-spacing:-.06em;margin:0}.category span{display:block;color:#aaa;margin-top:8px;font-size:10px;text-transform:uppercase;letter-spacing:.16em}
+.section-intro{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:end;margin-bottom:45px}.section-intro p{color:#aaa;line-height:1.8;max-width:540px}.section-intro h2{margin-bottom:0}
+.gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:10px}.shot{position:relative;overflow:hidden;background:#151515;cursor:pointer}.shot img{height:100%;object-fit:cover;transition:transform .7s ease,filter .4s;filter:saturate(.92)}.shot:hover img{transform:scale(1.035);filter:brightness(.86)}.shot:nth-child(1),.shot:nth-child(4),.shot:nth-child(6){grid-column:span 7;height:650px}.shot:nth-child(2),.shot:nth-child(3),.shot:nth-child(5){grid-column:span 5;height:650px}.shot-label{position:absolute;left:18px;bottom:18px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;background:#0009;padding:9px 12px;backdrop-filter:blur(8px)}
+.tennis-gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}.tennis-shot{position:relative;overflow:hidden;cursor:pointer;background:#121212}.tennis-shot img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease,filter .4s}.tennis-shot:hover img{transform:scale(1.035);filter:brightness(.88)}.tennis-shot:nth-child(1){grid-column:span 7;height:720px}.tennis-shot:nth-child(2){grid-column:span 5;height:720px}.tennis-shot:nth-child(3),.tennis-shot:nth-child(4),.tennis-shot:nth-child(5){grid-column:span 4;height:520px}.tennis-shot:nth-child(6){grid-column:span 5;height:620px}.tennis-shot:nth-child(7){grid-column:span 7;height:620px}.tennis-shot:nth-child(8){grid-column:span 5;height:650px}.tennis-shot:nth-child(9){grid-column:span 7;height:650px}.tennis-shot:nth-child(10),.tennis-shot:nth-child(11){grid-column:span 6;height:600px}.tennis-label{position:absolute;left:18px;bottom:18px;background:#000a;padding:9px 12px;font-size:10px;letter-spacing:.16em;text-transform:uppercase}
+.community-gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:10px}.community-shot{position:relative;overflow:hidden;background:#151515;cursor:pointer}.community-shot img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease,filter .4s;filter:saturate(.94)}.community-shot:hover img{transform:scale(1.035);filter:brightness(.86)}.community-shot:nth-child(1),.community-shot:nth-child(6),.community-shot:nth-child(11),.community-shot:nth-child(16){grid-column:span 7;height:620px}.community-shot:nth-child(2),.community-shot:nth-child(3),.community-shot:nth-child(5),.community-shot:nth-child(7),.community-shot:nth-child(8),.community-shot:nth-child(10),.community-shot:nth-child(12),.community-shot:nth-child(14),.community-shot:nth-child(15){grid-column:span 5;height:620px}.community-shot:nth-child(4),.community-shot:nth-child(9),.community-shot:nth-child(13){grid-column:span 4;height:520px}.community-label{position:absolute;left:18px;bottom:18px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;background:#0009;padding:9px 12px;backdrop-filter:blur(8px)}
+.editorial{padding:125px 5vw;background:#111;color:#fff}.editorial .big{font-size:clamp(42px,7vw,100px);font-weight:800;line-height:.95;letter-spacing:-.06em;max-width:1050px}.editorial .big span{color:#777}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:end}.about p{color:#aaa;line-height:1.85;font-size:16px}.contact{border-top:1px solid var(--line);padding-top:55px;display:flex;justify-content:space-between;align-items:end;gap:30px}.contact h2{margin:0}.footer{padding:30px 5vw;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:#666;font-size:10px;text-transform:uppercase;letter-spacing:.12em}
+.lightbox{position:fixed;inset:0;background:#000e;z-index:50;display:none;align-items:center;justify-content:center;padding:30px}.lightbox.open{display:flex}.lightbox img{max-width:92vw;max-height:90vh;width:auto;object-fit:contain}.close{position:absolute;top:24px;right:30px;font-size:28px;cursor:pointer;color:#fff}.counter{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);color:#fff;font-size:10px;letter-spacing:.15em}
+@media(max-width:700px){.navlinks{display:none}.section{padding:80px 5vw}.hero{min-height:88vh}.hero h1{font-size:19vw}.categories{grid-template-columns:1fr}.category,.category:nth-child(3),.category:nth-child(4),.category:last-child{min-height:300px;grid-column:auto}.section-intro,.about{grid-template-columns:1fr;gap:20px}.gallery,.tennis-gallery,.community-gallery{grid-template-columns:1fr}.shot,.shot:nth-child(n),.tennis-shot,.tennis-shot:nth-child(n),.community-shot,.community-shot:nth-child(n){grid-column:auto;height:480px}.editorial{padding:90px 5vw}.footer{flex-direction:column;gap:10px}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a class="brand" href="#top">DEWA ARY</a>
+  <div class="navlinks"><a href="#work">Work</a><a href="#tenis">Tennis</a><a href="#padel">Padel</a><a href="#community">Community</a><a href="#hyrox">HYROX</a><a href="#about">About</a><a href="#contact">Contact</a></div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-media"><img src="assets/tennis/DSC00200.jpg" alt="Tennis photography on clay court"></div>
+  <div class="hero-copy"><div class="eyebrow">Sports Photographer / Bali</div><h1>IN<br>MOTION.</h1><p>Capturing intensity, emotion and the moments between the action. Sports photography for athletes, tournaments and communities.</p><a class="cta" href="#work">Explore work ↓</a></div>
+</header>
+
+<section class="section" id="work">
+  <div class="eyebrow">01 — Selected categories</div><h2>THE GAME.<br>THE PEOPLE.</h2>
+  <div class="categories">
+    <a class="category" href="#tenis"><img src="assets/tennis/DSC00175.jpg" alt="Tennis"><div><h3>Tenis</h3><span>Competition / Portrait / Motion</span></div></a>
+    <a class="category" href="#padel"><img src="assets/padel/padel-01.jpg" alt="Padel"><div><h3>Padel</h3><span>Match / Tournament / Lifestyle</span></div></a>
+    <a class="category" href="#soccer"><div><h3>Mini Soccer</h3><span>Action / Team / Matchday</span></div></a>
+    <a class="category" href="#hyrox"><img src="assets/hyrox/hyrox-01.jpg" alt="HYROX"><div><h3>HYROX</h3><span>Endurance / Strength / Grit</span></div></a>
+    <a class="category" href="#community"><div><h3>Community</h3><span>People / Events / Culture</span></div></a>
+  </div>
+</section>
+
+<section class="section" id="tenis">
+  <div class="section-intro"><div><div class="eyebrow">02 — TENNIS</div><h2>COURT<br>STORIES.</h2></div><p>Movement, focus, friendship and the small moments between points. A visual tennis story captured across Bali's courts, from quiet details to peak action.</p></div>
+  <div class="tennis-gallery">
+    <div class="tennis-shot" onclick="openLightbox(this)"><img src="assets/tennis/DSC00200.jpg" alt="Tennis rackets and players on clay court"><span class="tennis-label">TENNIS / 01 — COURT</span></div>
+    <div class="tennis-shot" onclick="openLightbox(this)"><img src="assets/tennis/DSC00175.jpg" alt="Tennis player preparing a shot"><span class="tennis-label">TENNIS / 02 — FOCUS</span></div>
+    <div class="tennis-shot" onclick="openLightbox(this)"><img src="assets/tennis/DSC00165.jpg" alt="Tennis player ready position"><span class="tennis-label">TENNIS / 03 — READY</span></div>
+    <div class="tennis-shot" onclick="openLightbox(this)"><img src="assets/tennis/DSC00154.jpg" alt="Tennis player in action"><span class="tennis-label">TENNIS / 04 — MOTION</span></div>
+    <div class="tennis-shot" onclick="openLightbox(this)"><img src="assets/tennis/DSC00115.jpg" alt="Tennis player holding racket"><span class="tennis-label">TENNIS / 05 — DETAIL</span></div>
+    <div class="tennis-shot" onclick="openLightbox(this)"><img src="assets/tennis/DSC00055.jpg" alt="Tennis racket and shadow"><span class="tennis-label">TENNIS / 06 — SHADOW</span></div>
+    <div class="tennis-shot" onclick="openLightbox(this)"><img src="assets/tennis/DSC00007.jpg" alt="Tennis player celebration"><span class="tennis-label">TENNIS / 07 — CONNECTION</span></div>
+    <div class="tennis-shot" onclick="openLightbox(this)"><img src="assets/tennis/DSC00012.jpg" alt="Tennis player on blue court"><span class="tennis-label">TENNIS / 08 — COURT</span></div>
+    <div class="tennis-shot" onclick="openLightbox(this)"><img src="assets/tennis/DSC09572.jpg" alt="Tennis serve from behind"><span class="tennis-label">TENNIS / 09 — SERVE</span></div>
+    <div class="tennis-shot" onclick="openLightbox(this)"><img src="assets/tennis/DSC09665.jpg" alt="Tennis racket detail"><span class="tennis-label">TENNIS / 10 — DETAIL</span></div>
+    <div class="tennis-shot" onclick="openLightbox(this)"><img src="assets/tennis/DSC09679.jpg" alt="Tennis black and white portrait"><span class="tennis-label">TENNIS / 11 — MONO</span></div>
+  </div>
+</section>
+
+<section class="editorial"><div class="big">“Every point has a rhythm.<br><span>Every frame has a moment.</span>”</div></section>
+
+<section class="section" id="padel">
+  <div class="section-intro"><div><div class="eyebrow">03 — PADEL</div><h2>THE<br>RALLY.<br>THE<br>ENERGY.</h2></div><p>From tournament intensity to the small moments between points. A selection of padel stories captured across Bali's courts.</p></div>
+  <div class="gallery">
+    <div class="shot" onclick="openLightbox(this)"><img src="assets/padel/padel-01.jpg" alt="Padel action"><span class="shot-label">PADEL / 01</span></div>
+    <div class="shot" onclick="openLightbox(this)"><img src="assets/padel/padel-02.jpg" alt="Padel action"><span class="shot-label">PADEL / 02</span></div>
+    <div class="shot" onclick="openLightbox(this)"><img src="assets/padel/padel-03.jpg" alt="Padel action"><span class="shot-label">PADEL / 03</span></div>
+    <div class="shot" onclick="openLightbox(this)"><img src="assets/padel/padel-04.jpg" alt="Padel action"><span class="shot-label">PADEL / 04</span></div>
+    <div class="shot" onclick="openLightbox(this)"><img src="assets/padel/padel-05.jpg" alt="Padel action"><span class="shot-label">PADEL / 05</span></div>
+    <div class="shot" onclick="openLightbox(this)"><img src="assets/padel/padel-06.jpg" alt="Padel action"><span class="shot-label">PADEL / 06</span></div>
+    <div class="shot" onclick="openLightbox(this)"><img src="assets/padel/padel-07.jpg" alt="Padel action"><span class="shot-label">PADEL / 07</span></div>
+    <div class="shot" onclick="openLightbox(this)"><img src="assets/padel/padel-08.jpg" alt="Padel action"><span class="shot-label">PADEL / 08</span></div>
+    <div class="shot" onclick="openLightbox(this)"><img src="assets/padel/padel-09.jpg" alt="Padel action"><span class="shot-label">PADEL / 09</span></div>
+    <div class="shot" onclick="openLightbox(this)"><img src="assets/padel/padel-10.jpg" alt="Padel action"><span class="shot-label">PADEL / 10</span></div>
+    <div class="shot" onclick="openLightbox(this)"><img src="assets/padel/padel-11.jpg" alt="Padel action"><span class="shot-label">PADEL / 11</span></div>
+    <div class="shot" onclick="openLightbox(this)"><img src="assets/padel/padel-12.jpg" alt="Padel action"><span class="shot-label">PADEL / 12</span></div>
+  </div>
+</section>
+
+<section class="section" id="hyrox">
+  <div class="section-intro"><div><div class="eyebrow">04 — HYROX</div><h2>STRENGTH.<br>GRIT.<br>PEOPLE.</h2></div><p>A selection from a HYROX training session. The focus is on movement, effort, character and the energy of training together.</p></div>
+  <div class="gallery">
+    <div class="shot" onclick="openLightbox(this)"><img src="assets/hyrox/hyrox-1.jpg" alt="HYROX session"><span class="shot-label">HYROX / 1</span></div>
+    <div class="shot" onclick="openLightbox(this)"><img src="assets/hyrox/hyrox-2.jpg" alt="HYROX session"><span class="shot-label">HYROX / 2</span></div>
+    <div class="shot" onclick="openLightbox(this)"><img src="assets/hyrox/hyrox-3.jpg" alt="HYROX session"><span class="shot-label">HYROX / 3</span></div>
+    <div class="shot" onclick="openLightbox(this)"><img src="assets/hyrox/hyrox-4.jpg" alt="HYROX session"><span class="shot-label">HYROX / 4</span></div>
+    <div class="shot" onclick="openLightbox(this)"><img src="assets/hyrox/hyrox-5.jpg" alt="HYROX session"><span class="shot-label">HYROX / 5</span></div>
+    <div class="shot" onclick="openLightbox(this)"><img src="assets/hyrox/hyrox-6.jpg" alt="HYROX session"><span class="shot-label">HYROX / 6</span></div>
+  </div>
+</section>
+
+<section class="section" id="soccer"><div class="about"><div><div class="eyebrow">05 — MINI SOCCER</div><h2>MATCH.<br>TEAM.<br>ENERGY.</h2></div><div><p>Mini soccer photography for matchday stories, team portraits and community competitions.</p><p>Portfolio section ready for the next collection.</p></div></div></section>
+<section class="section" id="community">
+  <div class="section-intro"><div><div class="eyebrow">06 — COMMUNITY</div><h2>PEOPLE.<br>EVENTS.<br>CULTURE.</h2></div><p>Beyond the game: the people, friendships and communities that make sport worth capturing. A collection of padel communities, tournament groups and the moments that bring players together.</p></div>
+  <div class="community-gallery">
+    <div class="community-shot" onclick="openLightbox(this)"><img src="assets/community/community-01.JPG" alt="Padel community group photo 1" loading="lazy"><span class="community-label">COMMUNITY / 01</span></div>
+    <div class="community-shot" onclick="openLightbox(this)"><img src="assets/community/community-02.jpg" alt="Padel community group photo 2" loading="lazy"><span class="community-label">COMMUNITY / 02</span></div>
+    <div class="community-shot" onclick="openLightbox(this)"><img src="assets/community/community-03.JPG" alt="Padel community group photo 3" loading="lazy"><span class="community-label">COMMUNITY / 03</span></div>
+    <div class="community-shot" onclick="openLightbox(this)"><img src="assets/community/community-04.JPG" alt="Padel community group photo 4" loading="lazy"><span class="community-label">COMMUNITY / 04</span></div>
+    <div class="community-shot" onclick="openLightbox(this)"><img src="assets/community/community-05.JPG" alt="Padel community group photo 5" loading="lazy"><span class="community-label">COMMUNITY / 05</span></div>
+    <div class="community-shot" onclick="openLightbox(this)"><img src="assets/community/community-06.JPG" alt="Padel community group photo 6" loading="lazy"><span class="community-label">COMMUNITY / 06</span></div>
+    <div class="community-shot" onclick="openLightbox(this)"><img src="assets/community/community-07.jpg" alt="Padel community group photo 7" loading="lazy"><span class="community-label">COMMUNITY / 07</span></div>
+    <div class="community-shot" onclick="openLightbox(this)"><img src="assets/community/community-08.jpg" alt="Padel community group photo 8" loading="lazy"><span class="community-label">COMMUNITY / 08</span></div>
+    <div class="community-shot" onclick="openLightbox(this)"><img src="assets/community/community-09.jpg" alt="Padel community group photo 9" loading="lazy"><span class="community-label">COMMUNITY / 09</span></div>
+    <div class="community-shot" onclick="openLightbox(this)"><img src="assets/community/community-10.jpg" alt="Padel community group photo 10" loading="lazy"><span class="community-label">COMMUNITY / 10</span></div>
+    <div class="community-shot" onclick="openLightbox(this)"><img src="assets/community/community-11.jpg" alt="Padel community group photo 11" loading="lazy"><span class="community-label">COMMUNITY / 11</span></div>
+    <div class="community-shot" onclick="openLightbox(this)"><img src="assets/community/community-12.JPG" alt="Padel community group photo 12" loading="lazy"><span class="community-label">COMMUNITY / 12</span></div>
+    <div class="community-shot" onclick="openLightbox(this)"><img src="assets/community/community-13.JPG" alt="Padel community group photo 13" loading="lazy"><span class="community-label">COMMUNITY / 13</span></div>
+    <div class="community-shot" onclick="openLightbox(this)"><img src="assets/community/community-14.JPG" alt="Padel community group photo 14" loading="lazy"><span class="community-label">COMMUNITY / 14</span></div>
+    <div class="community-shot" onclick="openLightbox(this)"><img src="assets/community/community-15.JPG" alt="Padel community group photo 15" loading="lazy"><span class="community-label">COMMUNITY / 15</span></div>
+    <div class="community-shot" onclick="openLightbox(this)"><img src="assets/community/community-16.JPG" alt="Padel community group photo 16" loading="lazy"><span class="community-label">COMMUNITY / 16</span></div>
+  </div>
+</section>
+
+<section class="section" id="about"><div class="about"><div><div class="eyebrow">07 — About</div><h2>FRAME<br>THE<br>ENERGY.</h2></div><div><p>I’m Dewa, a Bali-based photographer focused on sports and community stories. I look for the split seconds that show effort, connection and character—not just the final result.</p><p>From tournaments to community sessions, the goal is simple: create images that make people feel the moment again.</p></div></div></section>
+
+<section class="section" id="contact"><div class="contact"><div><div class="eyebrow">08 — Contact</div><h2>LET'S<br>CREATE.</h2></div><div><a class="cta" href="https://instagram.com/theshutters__" target="_blank" rel="noopener">Instagram ↗</a></div></div></section>
+<footer class="footer"><span>© 2026 DEWA ARY PHOTOGRAPHY</span><span>BALI, INDONESIA</span></footer>
+<div class="lightbox" id="lightbox" onclick="closeLightbox()"><span class="close">×</span><img id="lightboxImg" src="" alt=""><div class="counter" id="counter"></div></div>
+<script>
+const allShots=[...document.querySelectorAll('.shot,.tennis-shot')];
+function openLightbox(el){event.stopPropagation();document.getElementById('lightboxImg').src=el.querySelector('img').src;document.getElementById('counter').textContent=(allShots.indexOf(el)+1)+' / '+allShots.length;document.getElementById('lightbox').classList.add('open')}
+function closeLightbox(){document.getElementById('lightbox').classList.remove('open')}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox()})
+</script>
+</body>
+</html>
